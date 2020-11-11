@@ -1,6 +1,7 @@
 import requests
 import os
 import smtplib
+import time
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 
@@ -56,3 +57,8 @@ def send_mail():
 
 
 check_price()
+
+while True:
+    check_price()
+    # pauses execution and runs every hour
+    time.sleep(60 * 60)
